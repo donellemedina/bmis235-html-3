@@ -17,12 +17,13 @@ body {
     padding: 0 20px 40px 20px;
 }
 
-/* the menu at the top of every page */
+/* Top navigation menu */
 nav {
-    background-color: ##ffffff;
+    background-color: #ffffff;
     padding: 14px;
     text-align: center;
 }
+
 
 /* every image inside the menu is forced to the same height.
    If your images still look different sizes, their WIDTHS are
@@ -33,7 +34,6 @@ nav img {
     vertical-align: middle;
 }
 
-/* no underline or border around the image links */
 nav a {
     text-decoration: none;
 }
@@ -51,120 +51,80 @@ p {
     line-height: 1.5;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Image carousel */
+.carousel {
+    position: relative;
+    width: min(90vw, 800px);
+    margin: 24px auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    touch-action: pan-y;
+    user-select: none;
 }
 
-body {
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  background: #111827;
-  font-family: system-ui, sans-serif;
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.4s ease;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.carousel-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
 }
 
-body {
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  background: #111827;
-  font-family: system-ui, sans-serif;
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(17, 24, 39, 0.65);
+    color: #ffffff;
+    font-size: 1.25rem;
+    cursor: pointer;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.carousel-btn:hover {
+    background: rgba(17, 24, 39, 0.9);
 }
 
-body {
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  background: #111827;
-  font-family: system-ui, sans-serif;
+.carousel-btn.prev {
+    left: 14px;
 }
 
-carousel {
-  position: relative;
-  width: min(90vw, 800px);
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-  touch-action: pan-y;
-  user-select: none;
+.carousel-btn.next {
+    right: 14px;
 }
 
-carousel-track {
-  display: flex;
-  height: 100%;
-  transition: transform 0.4s ease;
+.carousel-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
 }
 
-carousel-track img {
-  flex: 0 0 100%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
 }
 
-carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(17, 24, 39, 0.65);
-  color: #fff;
-  font-size: 1.25rem;
-  cursor: pointer;
-}
-
-carousel-btn:hover {
-  background: rgba(17, 24, 39, 0.9);
-}
-
-carousel-btn.prev {
-  left: 14px;
-}
-
-carousel-btn.next {
-  right: 14px;
-}
-
-carousel-dots {
-  position: absolute;
-  bottom: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-}
-
-carousel-dot {
-  width: 10px;
-  height: 10px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
-  cursor: pointer;
-}
-
-carousel-dot.active {
-  background: #fff;
-  transform: scale(1.2);
+.carousel-dot.active {
+    background: #ffffff;
+    transform: scale(1.2);
 }
 
 footer {
